@@ -52,11 +52,23 @@ div.footerpointer
    		<center><table id="table1" border='1' bottom="0px">
 		
             <tr style="background-color:#a9a9a9">
+		
+                <th>Team Id</th>
+                <th>Unique Id</th>
                 <th>Order ID</th>
                 <th>Item</th>
                 <th>Priority</th>
-                <th>Quantity</th>
-                <th>City</th>
+		<th>Quantity</th>
+		<th>City</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Order Dispatched</th>
+                <th>Order Shipped</th>
+		<th>Order Time</th>
+		<th>Dispatch Time</th>
+                <th>Shipping Time</th>
+		<th>Time Taken</th>
+		    
             </tr>
             
             <tbody id="tableContent">
@@ -151,11 +163,21 @@ div.footerpointer
             	for (var i = 0; i < data.feed.entry.length; ++i) {
                 	var myData_map, myData_order;
 
-                    trHTML += '<tr><td>' + data.feed.entry[i].gsx$orderid.$t + 
-                        	  '</td><td>' + data.feed.entry[i].gsx$item.$t + 
-                        	  '</td><td>' + data.feed.entry[i].gsx$priority.$t + 
-                        	  '</td><td>' + data.feed.entry[i].gsx$quantity.$t + 
-                        	  '</td><td>'  + data.feed.entry[i].gsx$city.$t + 
+                    trHTML += '<tr><td>' + data.feed.entry[i].gsx$Team Id.$t + 
+                        	  '</td><td>' + data.feed.entry[i].gsx$Unique Id.$t + 
+			          '</td><td>' + data.feed.entry[i].gsx$Order ID.$t + 
+                        	  '</td><td>' + data.feed.entry[i].gsx$Item.$t + 
+				  '</td><td>' + data.feed.entry[i].gsx$Priority.$t +	  
+                        	  '</td><td>' + data.feed.entry[i].gsx$Quantity.$t + 
+                        	  '</td><td>'  + data.feed.entry[i].gsx$City.$t + 
+			          '</td><td>'  + data.feed.entry[i].gsx$Longitude.$t + 
+			          '</td><td>'  + data.feed.entry[i].gsx$Latitude.$t + 
+			          '</td><td>'  + data.feed.entry[i].gsx$Order Dispatched.$t + 
+				  '</td><td>'  + data.feed.entry[i].gsx$Order Shipped.$t + 
+				  '</td><td>'  + data.feed.entry[i].gsx$Order Time.$t + 
+				  '</td><td>'  + data.feed.entry[i].gsx$Dispatch Time.$t + 
+				  '</td><td>'  + data.feed.entry[i].gsx$Shipping Time.$t + 
+				  </td><td>'  + data.feed.entry[i].gsx$Time Taken.$t + 
                         	  '</td></tr>';
 
                 }
