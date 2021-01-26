@@ -2,22 +2,7 @@
 <html>
 <head>
     <title>Vargi-Bots</title>
-<style>
-div.footer
-{
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:100%;
-}
-div.footerpointer
-{
-    position:absolute;
-    left:0;
-    vertical-align: middle;;
-    width:100%;
-}
-</style>
+
     <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -44,10 +29,10 @@ div.footerpointer
 <body>
     <center><h2>VB#2560 </h2></center>
     <div id="map" style="height: 380px" align="top"></div>
-    <div class="footerpointer">
+    
     <div id="column_chart" style="width: 110%; height: 350px; middle=0px "></div>
-    </div>
-   	        <div class="footer">
+    
+   	        
 		<hr style="height:4px;border-width:0;color:gray;background-color:gray">
    		<center><table id="table1" border='1' bottom="0px">
 		
@@ -72,7 +57,7 @@ div.footerpointer
             <tbody id="tableContent">
             </tbody>
 	        </table></center>
-        <hr style="height:4px;border-width:0;color:gray;background-color:gray"></div>
+               
         
     
 </body>
@@ -206,9 +191,10 @@ div.footerpointer
 
             var json_data = {
                 "City": data.feed.entry[i].gsx$city.$t,
-                "Oder ID" : data.feed.entry[i].gsx$orderid.$t,
-                "Item" : data.feed.entry[i].gsx$item.$t,
-                "Latitude": parseFloat(data.feed.entry[i].gsx$latitude.$t),
+                "OderID" : data.feed.entry[i].gsx$orderid.$t,
+                "OrderDispatched":data.feed.entry[i].gsx$orderdispatched.$t,
+                "OrderShipped": data.feed.entry[i].gsx$ordershipped.$t,
+		"Latitude": parseFloat(data.feed.entry[i].gsx$latitude.$t),
                 "Longitude": parseFloat(data.feed.entry[i].gsx$longitude.$t)
             };
             jsonDataObject.push(json_data);
@@ -227,7 +213,7 @@ div.footerpointer
                         var marker = e.target;
                         popup = L.popup()
                         .setLatLng(marker.getLatLng())
-                        .setContent("Order ID: " + marker.myJsonData.OderID + " || Item: " +   marker.myJsonData.Item)
+                        .setContent("Order ID: " + marker.myJsonData.OderID + " || Order Dispatched: " +   marker.myJsonData.OrderDispatched + " || Order Shipped: " +   marker.myJsonData.OrderShipped)
                         .openOn(map);
                     }
 
